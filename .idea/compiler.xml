@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="agronomia" target="11" />
-      <module name="TCC-API" target="11" />
+      <module name="TCC-API" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
