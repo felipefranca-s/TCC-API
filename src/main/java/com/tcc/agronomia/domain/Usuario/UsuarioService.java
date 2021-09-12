@@ -21,10 +21,6 @@ public class UsuarioService {
         return rep.findById(id);
     }
 
-    public List<Usuario> getUsuariosByPerfilId(String perfilId) {
-        return rep.findByPerfilId(perfilId);
-    }
-
     public Usuario insert(Usuario usuario) {
         return rep.save(usuario);
     }
@@ -39,7 +35,8 @@ public class UsuarioService {
             db.setEmail(usuario.getEmail());
             db.setSenha(usuario.getSenha());
             db.setPerfilId(usuario.getPerfilId());
-            db.setAtivo(usuario.getAtivo());
+            db.setAtivo(usuario.isAtivo());
+            db.setGrupoId(usuario.getGrupoId());
 
             System.out.println("Usuario ID: "+db.getId());
 
@@ -63,16 +60,4 @@ public class UsuarioService {
             throw new RuntimeException("Não foi possivel deletar o registro");
         }
     }
-
-//    public List<Usuario> getUsuariosFake(){
-//        List<Usuario> usuarios = new ArrayList<>();
-//
-//        usuarios.add(new Usuario(1L, "nomeTeste","emailTeste","senhaTeste","ativoTeste","perfilIdTeste") );
-//        usuarios.add(new Usuario(2L, "nomeTeste 2","emailTeste 2","senhaTeste 2","ativoTeste 2","perfilIdTeste 2") );
-//        usuarios.add(new Usuario(3L, "nomeTeste 3","emailTeste 3","senhaTeste 3","ativoTeste 3","perfilIdTeste 3") );
-//
-//        return usuarios;
-//    }
-
-
 }

@@ -20,10 +20,6 @@ public class ArduinoService {
         return repArduino.findById(id);
     }
 
-    public List<Arduino> getArduinoDadosBySensor(String sensor) {
-        return repArduino.findBySensor(sensor);
-    }
-
     public Arduino insert(Arduino arduino) {
         return repArduino.save(arduino);
     }
@@ -34,10 +30,9 @@ public class ArduinoService {
         Optional<Arduino> optional = getArduinoDadosById(id);
         if(optional.isPresent()){
             Arduino db = optional.get();
-            db.setSensor(arduino.getSensor());
-            db.setValor(arduino.getValor());
-            db.setValor2(arduino.getValor2());
-            db.setEstado(arduino.getEstado());
+            db.setAtuador(arduino.isAtuador());
+            db.setNome(arduino.getNome());
+            db.setPlantacaoID(arduino.getPlantacaoID());
 
             System.out.println("Dados Arduino com ID: "+db.getId());
 
@@ -60,17 +55,5 @@ public class ArduinoService {
             throw new RuntimeException("Não foi possivel deletar o registro");
         }
     }
-
-
-//    public List<Arduino> getArduino() {
-//        List<Arduino> arduinoList = new ArrayList<>();
-//
-//        arduinoList.add(new Arduino(1L,"sensor1",0.11f,0.101f,true));
-//        arduinoList.add(new Arduino(2L,"sensor2",0.12f,0.102f,false));
-//        arduinoList.add(new Arduino(3L,"sensor3",0.13f,0.103f,true));
-//
-//
-//        return arduinoList;
-//    }
 
 }

@@ -34,14 +34,6 @@ public class ArduinoController {
         //return ResponseEntity.ok(service.getUsuariosById(id));
     }
 
-    @GetMapping("/sensor/{sensor}")
-    public ResponseEntity get(@PathVariable("sensor") String sensor){
-        List<Arduino> arduinoList = serviceArduino.getArduinoDadosBySensor(sensor);
-        return  arduinoList.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(arduinoList);
-    }
-
     @PostMapping
     public String post(@RequestBody Arduino arduino){
         Arduino ar = serviceArduino.insert(arduino);

@@ -16,11 +16,6 @@ public class PlantacaoController {
     @Autowired
     private PlantacaoService service;
 
-//    @GetMapping
-//    public List<Usuario> get(){
-//        return service.getUsuariosFake();
-//    }
-
     @GetMapping
     public ResponseEntity<Iterable<Plantacao>> get(){
         return new ResponseEntity<>(service.getPlantilDados(), HttpStatus.OK);

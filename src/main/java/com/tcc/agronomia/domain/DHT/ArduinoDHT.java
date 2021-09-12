@@ -14,14 +14,16 @@ public class ArduinoDHT {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "id_arduino")
-    private long idArduino;
+    private String nome;
+    private float temperatura;
+    private boolean estado;
 
     @Column(name = "umidade_ar")
     private int umidadeAr;
 
-    private String nome;
-    private float temperatura;
-    private boolean estado;
+    @Column(name = "id_arduino")
+    private long idArduino;
+
+
 
 }

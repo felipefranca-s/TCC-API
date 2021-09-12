@@ -15,8 +15,11 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-    private String ativo;
+    private boolean ativo;
 
     @Column(name = "perfil_id")
-    private String perfilId;
+    private long perfilId;
+
+    @Column(name = "grupo_id")
+    private long grupoId;
 }

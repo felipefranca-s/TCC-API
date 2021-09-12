@@ -11,15 +11,11 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/usuarios")
+@RequestMapping("/api/v1/usuario")
 public class UsuarioController {
     @Autowired
     private UsuarioService service;
 
-//    @GetMapping
-//    public List<Usuario> get(){
-//        return service.getUsuariosFake();
-//    }
 
     @GetMapping
     public ResponseEntity<Iterable<Usuario>> get(){
@@ -35,16 +31,7 @@ public class UsuarioController {
         }else{
             return ResponseEntity.notFound().build();
         }
-
         //return ResponseEntity.ok(service.getUsuariosById(id));
-    }
-
-    @GetMapping("/perfil/{perfilId}")
-    public ResponseEntity get(@PathVariable("perfilId") String perfilId){
-        List<Usuario> usuarios = service.getUsuariosByPerfilId(perfilId);
-        return  usuarios.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(usuarios);
     }
 
     @PostMapping

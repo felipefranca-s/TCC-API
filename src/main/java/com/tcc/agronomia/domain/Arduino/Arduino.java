@@ -2,10 +2,7 @@ package com.tcc.agronomia.domain.Arduino;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -16,12 +13,11 @@ public class Arduino {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String  sensor;
-    private float   valor;
-    private float   valor2;
-    private boolean estado;
+    private boolean atuador;
+    private String  nome;
 
-    public boolean getEstado() {
-        return estado;
-    }
+    @Column(name = "plantacao_id")
+    private long   plantacaoID;
+
+
 }
