@@ -1,7 +1,7 @@
 package com.tcc.agronomia.api;
 
 
-import com.tcc.agronomia.domain.personalizado.PlantilGrupoService;
+import com.tcc.agronomia.domain.PlantilGrupo.PlantilGrupoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +15,7 @@ public class PlantilGrupoController {
     private PlantilGrupoService serviceJoin;
 
     @GetMapping
-    public Iterable<com.tcc.agronomia.domain.personalizado.PlantilGrupo> get(){
+    public Iterable<com.tcc.agronomia.domain.PlantilGrupo.PlantilGrupo> get(){
         return serviceJoin.getJoinPlantilGrupo();
     }
 }

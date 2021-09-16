@@ -1,4 +1,4 @@
-package com.tcc.agronomia.domain.personalizado;
+package com.tcc.agronomia.domain.PlantilGrupo;
 
 import lombok.Data;
 
