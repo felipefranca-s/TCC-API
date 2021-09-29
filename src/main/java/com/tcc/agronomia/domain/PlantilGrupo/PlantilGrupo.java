@@ -1,6 +1,6 @@
 package com.tcc.agronomia.domain.PlantilGrupo;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 

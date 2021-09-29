@@ -1,6 +1,6 @@
 package com.tcc.agronomia.domain.Grupo;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

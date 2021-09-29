@@ -6,7 +6,11 @@ import org.hibernate.Hibernate;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Data
+
+@Getter
+@Setter
+@RequiredArgsConstructor
+@ToString
 @Entity(name = "arduino_dht")
 public class ArduinoDHT {
 

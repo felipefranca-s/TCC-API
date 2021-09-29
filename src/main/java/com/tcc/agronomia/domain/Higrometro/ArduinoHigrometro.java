@@ -1,6 +1,6 @@
 package com.tcc.agronomia.domain.Higrometro;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
